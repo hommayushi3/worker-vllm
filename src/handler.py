@@ -9,6 +9,7 @@ from vllm import AsyncLLMEngine, SamplingParams, AsyncEngineArgs
 from vllm.utils import random_uuid
 import runpod
 import os
+from download_model
 
 # Prepare the model and tokenizer
 MODEL_NAME = os.environ.get('MODEL_NAME')
@@ -30,14 +31,14 @@ except ValueError:
 
 # Prepare the engine's arguments
 engine_args = AsyncEngineArgs(
-    model=f"{MODEL_BASE_PATH}{MODEL_NAME.split('/')[1]}",
+    model=MODEL_NAME,
     quantization=QUANTIZATION,
     tokenizer=TOKENIZER,
     tokenizer_mode="auto",
     tensor_parallel_size=NUM_GPU_SHARD,
     dtype="auto",
     seed=0,
-    max_num_batched_tokens=4096, # set higher if needed
+    max_num_batched_tokens=8192, # set higher if needed
     disable_log_stats=False,
     # max_num_seqs=256,
 )
