@@ -1,6 +1,6 @@
 # Required Python packages get listed here, one per line.
 # Recomended to lock the version number to avoid unexpected changes.
-fastapi==0.99.1
-vllm==0.2.1
-huggingface-hub==0.16.4
+fastapi==0.104.0
+vllm==0.2.1.post1
+huggingface-hub==0.18.0
 runpod @ git+https://github.com/runpod/runpod-python@main#egg=runpod 
