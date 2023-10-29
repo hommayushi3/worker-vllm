@@ -9,7 +9,6 @@ from vllm import AsyncLLMEngine, SamplingParams, AsyncEngineArgs
 from vllm.utils import random_uuid
 import runpod
 import os
-from download_model
 
 # Prepare the model and tokenizer
 MODEL_NAME = os.environ.get('MODEL_NAME')
